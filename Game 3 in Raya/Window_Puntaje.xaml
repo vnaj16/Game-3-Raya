@@ -1,0 +1,23 @@
+﻿<Window x:Class="Game_3_in_Raya.Window_Puntaje"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game_3_in_Raya"
+        mc:Ignorable="d"
+        Title="Puntaje" Height="220" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="5" >
+            <Label Content="PUNTAJE" HorizontalAlignment="Center" Margin="0,0,0,10"></Label>
+            <DataGrid x:Name="DataGrid_Puntaje" AutoGenerateColumns="False" Margin="10,0,10,0" HorizontalScrollBarVisibility="Disabled">
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="Nombre" Width="70" Binding="{Binding Nombre}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Victorias" Width="60" Binding="{Binding Victorias}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Derrotas" Width="60" Binding="{Binding Derrotas}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Empates" Width="60" Binding="{Binding Empates}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button HorizontalAlignment="Right" Click="Button_Click" Margin="10">Salir</Button>
+        </StackPanel>
+    </Grid>
+</Window>

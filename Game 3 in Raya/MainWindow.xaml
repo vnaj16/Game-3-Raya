@@ -1,0 +1,94 @@
+﻿<Window x:Class="Game_3_in_Raya.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game_3_in_Raya"
+        xmlns:Properties="clr-namespace:Game_3_in_Raya.Properties"
+        Title="Juego 3 en Raya" Height="600" Width="600">
+      
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Grid.Column="0">
+            <MenuItem Header="Juego">
+                <MenuItem Name="MenuItem_Inicio" Header="Inicio" Click="MenuItem_Inicio_Click"/>
+                <MenuItem Name="MenuItem_ComenzarNuevo" Header="Comenzar de nuevo" Click="MenuItem_ComenzarNuevo_Click"/>
+                <MenuItem Name="MenuItem_VerResultados"  Header="Ver resultados" Click="MenuItem_VerResultados_Click"/>
+                <MenuItem Name="MenuItem_CambiarJugadores" Header="Cambiar jugadores" Click="MenuItem_CambiarJugadores_Click"/>
+                <Separator/>
+                <MenuItem Header="Salir" Click="MenuItem_Click"/>
+            </MenuItem>
+
+        </Menu>
+
+        <Grid Grid.Row="1" x:Name="Grid_Juego" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Button x:Name="Button_1" Grid.Column="0" Grid.Row="0" Click="Button_1_Click"/>
+            <Button x:Name="Button_2" Grid.Column="1" Grid.Row="0" Click="Button_2_Click"/>
+            <Button x:Name="Button_3" Grid.Column="2" Grid.Row="0" Click="Button_3_Click"/>
+            <Button x:Name="Button_4" Grid.Column="0" Grid.Row="1" Click="Button_4_Click"/>
+            <Button x:Name="Button_5" Grid.Column="1" Grid.Row="1" Click="Button_5_Click"/>
+            <Button x:Name="Button_6" Grid.Column="2" Grid.Row="1" Click="Button_6_Click"/>
+            <Button x:Name="Button_7" Grid.Column="0" Grid.Row="2" Click="Button_7_Click"/>
+            <Button x:Name="Button_8" Grid.Column="1" Grid.Row="2" Click="Button_8_Click"/>
+            <Button x:Name="Button_9" Grid.Column="2" Grid.Row="2" Click="Button_9_Click"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Name="Grid_Home" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" FontSize="25" Foreground="Black" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">JUEGO 3 EN RAYA</Label>
+            <Label Grid.Row="1" FontSize="17" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center">Ingrese el nombre de los jugadores</Label>
+            <Label Grid.Row="2" Grid.Column="0" Margin="80,0,30,0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,15">Jugador 1</TextBlock>
+                    <TextBox x:Name="TextBox_Jugador1_Grid_Home" Width="100" MinWidth="50"></TextBox>
+                </StackPanel>
+            </Label>
+            <Label Grid.Row="2" Grid.Column="2"  Margin="30,0,80,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,15">Jugador 2</TextBlock>
+                    <TextBox x:Name="TextBox_Jugador2_Grid_Home" Width="100" MinWidth="50"></TextBox>
+                </StackPanel>
+            </Label>
+            <Button Grid.Row="3" Name="Button_Guardar_Grid_Home" Grid.Column="1" Width="80" VerticalAlignment="Top" Click="Button_Guardar_Grid_Home_Click">Guardar</Button>
+            <TextBlock x:Name="Label_Jugador1_Grid_Home" Grid.Row="4" Visibility="Hidden" Margin="15,50,15,15" Grid.ColumnSpan="3" Text="J1 jugará primero con la ficha X"/>
+            <TextBlock x:Name="Label_Jugador2_Grid_Home" Grid.Row="5" Visibility="Hidden" Margin="15,50,0,0" Grid.ColumnSpan="3" Text="J2 usará la ficha O"/>
+            <Button x:Name="Button_ComenzarJuego_Grid_Home" Grid.Row="6" Visibility="Hidden" Grid.Column="1" Margin="0,10,0,0" Height="40" Width="100" VerticalAlignment="Center" Click="Button_ComenzarJuego_Grid_Home_Click">Comenzar Juego</Button>
+        </Grid>
+
+
+    </Grid>
+</Window>
